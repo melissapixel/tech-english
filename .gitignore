@@ -18,6 +18,8 @@ db.sqlite3
 *.local
 local_settings.py
 
+/eng/eng/settings.py
+
 # Media & static files (if local)
 /media/
 /static/
