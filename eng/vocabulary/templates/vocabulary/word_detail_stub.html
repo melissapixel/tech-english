@@ -2,9 +2,60 @@
 {% block title %}search word{% endblock %}
 
 {% block content %}
-    <h1>Заглушка: страница слова</h1>
-    <p><strong>Слово:</strong> {{ word.word_en }}</p>
-    <p><strong>Перевод:</strong> {{ word.translation_ru }}</p>
-    <p><em>Позже здесь будут фразы, тексты и карточки.</em></p>
+    <h1>{{ word.word_en }}</h1>
+    <p>({{ word.translation_ru }})</p>
+
+    <!-- <p><em>Позже здесь будут фразы, тексты и карточки.</em></p> -->
+
+    <!-- Фразы -->
+    <div class="section">
+        <h2>Фразы</h2>
+        {% if word.get_phrases %}
+            <table class="examples-table">
+                <thead>
+                    <tr>
+                        <th>Английский</th>
+                        <th>Перевод</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for phrase in word.get_phrases %}
+                        <tr>
+                            <td class="en">{{ phrase.example_en }}</td>
+                            <td class="ru">{{ phrase.translation_ru }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-data">Нет фраз для этого слова.</p>
+        {% endif %}
+    </div>
+
+    <!-- Тексты -->
+    <div class="section">
+        <h2>Тексты</h2>
+        {% if word.get_texts %}
+            <table class="examples-table">
+                <thead>
+                    <tr>
+                        <th>Английский</th>
+                        <th>Перевод</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for text in word.get_texts %}
+                        <tr>
+                            <td class="en">{{ text.example_en }}</td>
+                            <td class="ru">{{ text.translation_ru }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-data">Нет текстов для этого слова.</p>
+        {% endif %}
+    </div>
+
     <a href="{% url 'vocabulary:search' %}">← Назад к поиску</a>
 {% endblock %}
