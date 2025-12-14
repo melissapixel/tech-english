@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ word.word_en }}</title>
+</head>
+<body>
+    <h1>Заглушка: страница слова</h1>
+    <p><strong>Слово:</strong> {{ word.word_en }}</p>
+    <p><strong>Перевод:</strong> {{ word.translation_ru }}</p>
+    <p><em>Позже здесь будут фразы, тексты и карточки.</em></p>
+    <a href="{% url 'vocabulary:search' %}">← Назад к поиску</a>
+</body>
+</html>
