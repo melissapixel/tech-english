@@ -17,6 +17,18 @@ class Word(models.Model):
 
     def __str__(self):
         return f"{self.word_en} → {self.translation_ru}"
+    
+    # создаем методы
+    def get_phrases(self):
+        return self.phrases.all()
+    
+    def get_texts(self):
+        return self.texts.all()
+
+    def get_all_examples(self):
+        # Возвращает объединённый QuerySet: сначала фразы, потом тексты (не QuerySet, а список)
+        from itertools import chain
+        return list(chain(self.phrases.all(), self.texts.all()))
 
     class Meta:
         verbose_name = "Слово"
