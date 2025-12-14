@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Поиск слова</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 40px; }
-        .error { color: red; margin: 10px 0; }
-        input[type="text"] { padding: 8px; width: 300px; }
-        button { padding: 8px 16px; margin-left: 8px; }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}search word{% endblock %}
+
+{% block content %}
     <h1>Найди слово на английском</h1>
 
     {% if error %}
@@ -22,5 +13,4 @@
         <input type="text" name="query" placeholder="Введите слово..." value="{{ query|default:'' }}">
         <button type="submit">Найти</button>
     </form>
-</body>
-</html>
+{% endblock %}

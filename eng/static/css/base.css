@@ -1,0 +1,87 @@
+/* ПЕРЕМЕННЫЕ */
+:root {
+    --primary-color: #191f23;
+    --font-size-big: 16px;
+}
+
+/* СТАНДАРТНЫЕ НАСТРОЙКИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Общий контейнер для выравнивания */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* === ШАПКА === */
+.site-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.site-header nav {
+  float: right;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.site-header nav a:hover {
+  opacity: 0.8;
+}
+
+/* Очистка float */
+.site-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* === ФУТЕР === */
+.site-footer {
+  background-color: var(--primary-color);
+  color: #ecf0f1;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ВСТАВЛЯЕМЫЙ КОНТЕНТ */
+.content {
+    text-align: center;
+    margin: 40px;
+}
+p {
+    padding: 20px;
+}
+.error { color: red; margin: 10px 0; }
+input[type="text"] { padding: 8px; width: 300px; margin: 20px;}
+button { padding: 8px 16px; }
