@@ -1,0 +1,19 @@
+{% load static sass_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">  <!-- глобал стили -->
+    {% block extra_css %}{% endblock %}    <!-- Дополнительные стили от приложения -->
+</head>
+<body>
+    {% include 'partials/_header.html' %}
+
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'partials/_footer.html' %}
+</body>
+</html>

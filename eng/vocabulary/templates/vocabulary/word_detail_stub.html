@@ -1,23 +1,21 @@
-{% extends "base.html" %}
-{% block title %}search word{% endblock %}
+{% extends 'base.html' %}    <!-- наследуем от глобального шаблона. -->
+{% load sass_tags %}
+
+{% block title %}{{ word.word_en }}{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% sass_src 'vocabulary/scss/pages/style.scss' %}">
+{% endblock %}
 
 {% block content %}
     <h1>{{ word.word_en }}</h1>
-    <p>({{ word.translation_ru }})</p>
-
-    <!-- <p><em>Позже здесь будут фразы, тексты и карточки.</em></p> -->
+    <p class="translation">({{ word.translation_ru }})</p>
 
     <!-- Фразы -->
     <div class="section">
         <h2>Фразы</h2>
         {% if word.get_phrases %}
             <table class="examples-table">
-                <thead>
-                    <tr>
-                        <th>Английский</th>
-                        <th>Перевод</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Английский</th><th>Перевод</th></tr></thead>
                 <tbody>
                     {% for phrase in word.get_phrases %}
                         <tr>
@@ -28,7 +26,7 @@
                 </tbody>
             </table>
         {% else %}
-            <p class="no-data">Нет фраз для этого слова.</p>
+            <p class="no-data">Нет фраз.</p>
         {% endif %}
     </div>
 
@@ -37,12 +35,7 @@
         <h2>Тексты</h2>
         {% if word.get_texts %}
             <table class="examples-table">
-                <thead>
-                    <tr>
-                        <th>Английский</th>
-                        <th>Перевод</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>Английский</th><th>Перевод</th></tr></thead>
                 <tbody>
                     {% for text in word.get_texts %}
                         <tr>
@@ -53,9 +46,9 @@
                 </tbody>
             </table>
         {% else %}
-            <p class="no-data">Нет текстов для этого слова.</p>
+            <p class="no-data">Нет текстов.</p>
         {% endif %}
     </div>
 
-    <a href="{% url 'vocabulary:search' %}">← Назад к поиску</a>
+    <a href="{% url 'vocabulary:search' %}" class="back-link">← Назад к поиску</a>
 {% endblock %}

@@ -1,0 +1,50 @@
+/* === ШАПКА === */
+.site-header {
+  background-color: $main-color;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.site-header nav {
+  float: right;
+}
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.site-header nav a:hover {
+  opacity: 0.8;
+}
+
+/* Очистка float */
+.site-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* === ФУТЕР === */
+.site-footer {
+  background-color: $main-color;
+  color: #ecf0f1;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}

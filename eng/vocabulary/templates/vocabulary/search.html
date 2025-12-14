@@ -1,5 +1,11 @@
-{% extends "base.html" %}
-{% block title %}search word{% endblock %}
+{% extends 'base.html' %}
+{% load sass_tags %}
+
+{% block title %}Поиск слова{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% sass_src 'vocabulary/scss/pages/style.scss' %}">
+{% endblock %}
 
 {% block content %}
     <h1>Найди слово на английском</h1>
