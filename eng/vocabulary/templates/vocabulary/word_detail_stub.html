@@ -1,4 +1,5 @@
 {% extends 'base.html' %}    <!-- наследуем от глобального шаблона. -->
+{% load word_highlight %}    <!-- загружаем свой фильтр  -->
 {% load sass_tags %}
 
 {% block title %}{{ word.word_en }}{% endblock %}
@@ -19,7 +20,7 @@
                 <tbody>
                     {% for phrase in word.get_phrases %}
                         <tr>
-                            <td class="en">{{ phrase.example_en }}</td>
+                            <td class="en">{{ phrase.example_en|highlight_word:word.word_en }}</td>     <!-- используем свой фильтр  -->
                             <td class="ru">{{ phrase.translation_ru }}</td>
                         </tr>
                     {% endfor %}
@@ -39,7 +40,7 @@
                 <tbody>
                     {% for text in word.get_texts %}
                         <tr>
-                            <td class="en">{{ text.example_en }}</td>
+                            <td class="en">{{ text.example_en|highlight_word:word.word_en }}</td>
                             <td class="ru">{{ text.translation_ru }}</td>
                         </tr>
                     {% endfor %}

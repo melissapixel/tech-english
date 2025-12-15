@@ -101,3 +101,7 @@ button {
   margin: 16px 0;
   @include fluid-text(16, 14);
 }
+
+.highlight {
+    background-color: yellow;
+}
