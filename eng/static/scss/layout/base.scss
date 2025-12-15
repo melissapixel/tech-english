@@ -1,4 +1,10 @@
 /* === ШАПКА === */
+.container {
+  width: 90%;
+  max-width: #{$container-desktop-width}px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 .site-header {
   background-color: $main-color;
   color: white;

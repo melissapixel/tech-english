@@ -1,11 +1,3 @@
-/* Общий контейнер для выравнивания */
-.container {
-  width: 90%;
-  max-width: #{$container-desktop-width}px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 /* ВСТАВЛЯЕМЫЙ КОНТЕНТ */
 .content {
   @include flex-center;
