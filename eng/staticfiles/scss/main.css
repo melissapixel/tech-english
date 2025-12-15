@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use 'functions' as *;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,6 +10,69 @@ body {
   color: #2c3e50;
   background-color: white;
   line-height: 1.6; }
+
+html.is-lock {
+  overflow: hidden; }
+
+body {
+  font-size: clamp(0.875rem, 0.79442rem + 0.33058vw, 1.125rem); }
+
+main {
+  flex-grow: 1; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--color-white); }
+
+h1, .h1 {
+  font-size: clamp(1.75rem, 1.14566rem + 2.47934vw, 3.625rem);
+  font-weight: 700; }
+
+h2, .h2 {
+  font-size: clamp(1.5rem, 1.01653rem + 1.98347vw, 3rem);
+  font-weight: 700; }
+
+h3, .h3 {
+  font-size: clamp(1.25rem, 0.8874rem + 1.4876vw, 2.375rem);
+  font-weight: 700; }
+
+h4, .h4 {
+  font-size: clamp(1.125rem, 1.00413rem + 0.49587vw, 1.5rem);
+  font-weight: 600; }
+
+h5, .h5 {
+  font-size: clamp(1.125rem, 1.04442rem + 0.33058vw, 1.375rem);
+  font-weight: 500; }
+
+h6, .h6 {
+  font-size: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
+  font-weight: 600; }
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  text-decoration: var(--transition-duration); }
+
+a {
+  color: inherit; }
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      color: var(--color-red-45); } }
+  a[class] {
+    text-decoration: none; }
+
+:focus-visible {
+  outline: 2px dashed var(--color-white);
+  outline-offset: 4px;
+  transition-duration: 0s !important; }
 
 /* === ШАПКА === */
 .site-header {

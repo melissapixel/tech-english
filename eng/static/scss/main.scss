@@ -1,11 +1,15 @@
-// Точка входа
+// Точка входа. фундамент всего стилевого каркаса проекта
 
 // abstracts
+@import 'abstracts/functions';
 @import 'abstracts/variables';
+@import 'abstracts/constans';
 @import 'abstracts/mixins';
+@import 'abstracts/media';
 
 // base
 @import 'base/reset';
+@import 'base/globals';
 
 // header and footer
 @import 'layout/base';
