@@ -1,7 +1,5 @@
-// Подключаем ГЛОБАЛЬНЫЕ файлы (из корня static/)
+// Подключаем ГЛОБАЛЬНЫЙ base.scss
+@import 'static/scss/main';
 
-@use '/scss/abstracts/variables';  // ← Путь /scss/... означает: от корня папки static/, а не от текущего файла.
-@use '/scss/base/reset';
-
-// Подключаем свои стили
-@use 'pages/word_detail';
+// Свои стили приложения
+@import 'pages/style';

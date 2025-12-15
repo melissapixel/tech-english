@@ -1,0 +1,217 @@
+@charset "UTF-8";
+@use 'functions' as *;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #2c3e50;
+  background-color: white;
+  line-height: 1.6; }
+
+html.is-lock {
+  overflow: hidden; }
+
+body {
+  font-size: clamp(0.875rem, 0.79442rem + 0.33058vw, 1.125rem); }
+
+main {
+  flex-grow: 1; }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--color-white); }
+
+h1, .h1 {
+  font-size: clamp(1.75rem, 1.14566rem + 2.47934vw, 3.625rem);
+  font-weight: 700; }
+
+h2, .h2 {
+  font-size: clamp(1.5rem, 1.01653rem + 1.98347vw, 3rem);
+  font-weight: 700; }
+
+h3, .h3 {
+  font-size: clamp(1.25rem, 0.8874rem + 1.4876vw, 2.375rem);
+  font-weight: 700; }
+
+h4, .h4 {
+  font-size: clamp(1.125rem, 1.00413rem + 0.49587vw, 1.5rem);
+  font-weight: 600; }
+
+h5, .h5 {
+  font-size: clamp(1.125rem, 1.04442rem + 0.33058vw, 1.375rem);
+  font-weight: 500; }
+
+h6, .h6 {
+  font-size: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
+  font-weight: 600; }
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  text-decoration: var(--transition-duration); }
+
+a {
+  color: inherit; }
+  @media (hover: hover) and (pointer: fine) {
+    a:hover {
+      color: var(--color-red-45); } }
+  a[class] {
+    text-decoration: none; }
+
+:focus-visible {
+  outline: 2px dashed var(--color-white);
+  outline-offset: 4px;
+  transition-duration: 0s !important; }
+
+/* === ШАПКА === */
+.site-header {
+  background-color: #191f23;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: inline-block; }
+
+.site-header nav {
+  float: right; }
+
+.site-header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: opacity 0.2s; }
+
+.site-header nav a:hover {
+  opacity: 0.8; }
+
+/* Очистка float */
+.site-header::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* === ФУТЕР === */
+.site-footer {
+  background-color: #191f23;
+  color: #ecf0f1;
+  padding: 1.5rem 0;
+  margin-top: 3rem; }
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem; }
+
+/* Общий контейнер для выравнивания */
+.container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem; }
+
+/* ВСТАВЛЯЕМЫЙ КОНТЕНТ */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: clamp(1.875rem, 1.27066rem + 2.47934vw, 3.75rem); }
+  @media (max-width: 767px) {
+    .content {
+      margin: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem); } }
+p {
+  padding: 16pxpx; }
+
+.error {
+  color: red;
+  margin: 10px 0; }
+
+input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  margin: 20px; }
+  @media (max-width: 767px) {
+    input[type="text"] {
+      width: 100%;
+      max-width: 300px; } }
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s; }
+  button:hover {
+    opacity: 0.9; }
+
+/* Секции */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: clamp(1rem, 0.67769rem + 1.32231vw, 2rem); }
+
+/* Таблица примеров */
+.examples-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: clamp(0.875rem, 0.79442rem + 0.33058vw, 1.125rem);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left; }
+
+.examples-table th,
+.examples-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea; }
+
+.examples-table th {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(0.75rem, 0.70971rem + 0.16529vw, 0.875rem);
+  letter-spacing: 0.5px; }
+
+.examples-table tbody tr:last-child td {
+  border-bottom: none; }
+
+.examples-table tbody tr:hover {
+  background-color: #f1f8ff; }
+
+.examples-table .en {
+  font-weight: 500;
+  color: #2c3e50; }
+
+.examples-table .ru {
+  color: #7f8c8d;
+  font-style: italic; }
+
+/* Сообщение "Нет данных" */
+.no-data {
+  color: #95a5a6;
+  font-style: italic;
+  margin: 16px 0;
+  font-size: clamp(0.875rem, 0.83471rem + 0.16529vw, 1rem); }
+
+/*# sourceMappingURL=main.css.map */

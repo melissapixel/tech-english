@@ -1,77 +1,103 @@
 /* Общий контейнер для выравнивания */
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: #{$container-desktop-width}px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-
 /* ВСТАВЛЯЕМЫЙ КОНТЕНТ */
 .content {
-    text-align: center;
-    margin: 40px;
+  @include flex-center;
+  flex-direction: column;
+  margin: #{fluid(60, 30)};
+
+  @include mobile {
+    margin: #{fluid(40, 20)};
+  }
 }
+
 p {
-    padding: 20px;
+  padding: #{$font-size-big}px;
 }
 
-.error { color: red; margin: 10px 0; }
-input[type="text"] { padding: 8px; width: 300px; margin: 20px;}
-button { padding: 8px 16px; }
-
-/* === Таблица примеров === */
-.section {
-  text-align: center;
+.error {
+  color: red;
+  margin: 10px 0;
 }
-.examples-table {
-    text-align: center;
+
+input[type="text"] {
+  padding: 8px;
+  width: 300px;
+  margin: 20px;
+
+  @include mobile {
     width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 16px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border-radius: 8px;
-    overflow: hidden;
+    max-width: 300px;
+  }
+}
+
+button {
+  @include button-style;
+}
+
+/* Секции */
+.section {
+  @include flex-center;
+  flex-direction: column;
+  margin-bottom: #{fluid(32, 16)};
+}
+
+/* Таблица примеров */
+.examples-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  @include fluid-text(18, 14);
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  overflow: hidden;
+  text-align: left;
 }
 
 .examples-table th,
 .examples-table td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid #eaeaea;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid $border-color;
 }
 
 .examples-table th {
-    background-color: #f8f9fa;
-    color: #2c3e50;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+  background-color: $bg-light;
+  color: $text-color;
+  font-weight: 600;
+  text-transform: uppercase;
+  @include fluid-text(14, 12);
+  letter-spacing: 0.5px;
 }
 
 .examples-table tbody tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .examples-table tbody tr:hover {
-    background-color: #f1f8ff;
+  background-color: #f1f8ff;
 }
 
 .examples-table .en {
-    font-weight: 500;
-    color: #2c3e50;
+  font-weight: 500;
+  color: $text-color;
 }
 
 .examples-table .ru {
-    color: #7f8c8d;
-    font-style: italic;
+  color: $text-light;
+  font-style: italic;
 }
 
 /* Сообщение "Нет данных" */
 .no-data {
-    color: #95a5a6;
-    font-style: italic;
-    margin: 16px 0;
+  color: #95a5a6;
+  font-style: italic;
+  margin: 16px 0;
+  @include fluid-text(16, 14);
 }
