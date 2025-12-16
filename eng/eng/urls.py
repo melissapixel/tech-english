@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("vocabulary.urls")),
     path('', include('pages.urls')),       # ← одиночные страницы
+    path('blog/', include('blog.urls', namespace='blog')),
 ]

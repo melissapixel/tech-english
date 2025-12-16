@@ -1,0 +1,9 @@
+<div class="latest-posts">
+  <h3>Из блога</h3>
+  {% for post in latest_posts %}
+    <div class="post-preview">
+      <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+      <p>{{ post.content|truncatewords:15 }}</p>
+    </div>
+  {% endfor %}
+</div>
