@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Contact{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% sass_src 'pages/scss/main.scss' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="contact-content">
+    <h1>📬 Свяжитесь с нами</h1>
+    <p class="contact-lead">
+      Мы всегда рады обратной связи, предложениям и вопросам.
+    </p>
+
+    <div class="contact-methods">
+        <div class="contact-method">
+            <a href="mailto:melissapixell@gmail.com" aria-label="Email">
+            <img src="{% static 'img/soc/google.ico' %}" alt="Email">
+            </a>
+        </div>
+
+        <div class="contact-method">
+            <a href="https://t.me/MelPixel" target="_blank" rel="noopener" aria-label="Telegram">
+            <img src="{% static 'img/soc/tg.ico' %}" alt="Telegram">
+            </a>
+        </div>
+
+        <div class="contact-method">
+            <a href="https://vk.com/mel_pixel" target="_blank" rel="noopener" aria-label="VK">
+            <img src="{% static 'img/soc/vk.ico' %}" alt="VK">
+            </a>
+        </div>
+    </div>
+
+    <div class="contact-note">
+      <p>Ответим в течение 1–2 рабочих дней.</p>
+    </div>
+  </div>
+{% endblock %}

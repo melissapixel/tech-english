@@ -46,3 +46,70 @@
     padding: #{fluid(40, 20)} 1rem;
   }
 }
+
+
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: #{fluid(60, 30)} 0;
+
+  h1 {
+    @include fluid-text(48, 28);
+    text-align: center;
+    margin-bottom: #{fluid(24, 16)};
+    color: $text-color;
+  }
+
+  .contact-lead {
+    @include fluid-text(20, 16);
+    text-align: center;
+    color: $text-light;
+    margin-bottom: #{fluid(40, 24)};
+    line-height: 1.6;
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: #{fluid(24, 16)};
+    margin-bottom: #{fluid(32, 20)};
+    justify-content: center;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  .contact-method {
+    background: $bg-light;
+    padding: #{fluid(20, 16)};
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Ограничиваем размер изображения (адаптируй по необходимости)
+    img {
+      width: auto;
+      height: #{fluid(40, 32)};
+      display: block;
+    }
+
+    a {
+      display: block;
+      line-height: 0; // чтобы убрать лишнее пространство от inline
+    }
+  }
+
+  .contact-note {
+    text-align: center;
+    color: $text-light;
+    @include fluid-text(16, 14);
+    margin-top: #{fluid(24, 16)};
+  }
+
+  @include mobile {
+    padding: #{fluid(40, 20)} 1rem;
+  }
+}
