@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Privacy Policy{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% sass_src 'pages/scss/main.scss' %}">
+{% endblock %}
+
+{% block content %}
+<div class="privacy-page">
+  <div class="container">
+    <h1 class="privacy-page__title">Privacy Policy</h1>
+    <div class="privacy-page__content">
+      <p class="privacy-page__paragraph">
+        This Privacy Policy describes how your personal information is collected, used, and shared when you visit or interact with our service.
+      </p>
+
+      <h2 class="privacy-page__subtitle">1. Information We Collect</h2>
+      <p class="privacy-page__paragraph">
+        We automatically collect certain information about your device, including your web browser, IP address, time zone, and cookies.
+      </p>
+
+      <h2 class="privacy-page__subtitle">2. How We Use Your Information</h2>
+      <p class="privacy-page__paragraph">
+        We use the collected information to provide and improve our services, personalize your experience, and communicate with you.
+      </p>
+
+      <h2 class="privacy-page__subtitle">3. Sharing Your Information</h2>
+      <p class="privacy-page__paragraph">
+        We do not sell or rent your personal information to third parties. We may share data with trusted partners to help us operate our service.
+      </p>
+
+      <h2 class="privacy-page__subtitle">4. Your Rights</h2>
+      <p class="privacy-page__paragraph">
+        You have the right to access, correct, or delete your personal data. Contact us at 
+        <a href="mailto:melissapixell@gmail.com" class="privacy-page__link">melissapixell@gmail.com</a> to exercise these rights.
+      </p>
+
+      <h2 class="privacy-page__subtitle">5. Changes to This Policy</h2>
+      <p class="privacy-page__paragraph">
+        We may update this policy from time to time. The updated version will be indicated by an updated “Effective Date”.
+      </p>
+
+      <p class="privacy-page__paragraph privacy-page__footer">
+        Last updated: December 16, 2025
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
