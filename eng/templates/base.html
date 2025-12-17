@@ -16,9 +16,11 @@
         {% block content %}{% endblock %}
     </main>
 
-    <aside>
-        {% show_latest_posts 3 %}
-    </aside>
+    {% block sidebar %}
+        <aside>
+            {% show_latest_posts 3 %}
+        </aside>
+    {% endblock %}
 
     {% include 'partials/_footer.html' %}
 </body>
