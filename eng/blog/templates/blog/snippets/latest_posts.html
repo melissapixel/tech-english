@@ -3,8 +3,11 @@
   {% for post in latest_posts %}
     <div class="post-preview">
       <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
-      <p>{{ post.created_at }}</p>
+      {% if post.has_image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
+      {% endif %}
       <p>{{ post.content|truncatewords:15 }}</p>
+      <p>{{ post.created_at }}</p>
     </div>
   {% endfor %}
 </div>
