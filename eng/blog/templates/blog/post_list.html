@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
+{% load sass_tags %}
+
 {% block title %}Блог{% endblock %}
-{% block sidebar %}{% endblock %}  <!-- ← пустой сайдбар -->
+{% block extra_css %}
+  <link rel="stylesheet" href="{% sass_src 'blog/scss/main.scss' %}">
+{% endblock %}
+{% block sidebar %}{% endblock %}
+
 {% block content %}
-  <h1>Блог</h1>
-  {% for post in posts %}
-    <article>
-      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.content|truncatewords:30 }}</p>
-      <p>{{ post.created_at }}</p>
-    </article>
-  {% empty %}
-    <p>Нет опубликованных постов.</p>
-  {% endfor %}
+  <div class="blog-list">
+    <h1 class="blog-list__header">Блог</h1>
+    {% for post in posts %}
+      <article class="post-preview">
+        <h2 class="post-preview__title">
+          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.image %}
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-preview__image">
+        {% endif %}
+        <p class="post-preview__excerpt">{{ post.content|truncatewords:30 }}</p>
+        <p class="post-preview__date">{{ post.created_at }}</p>
+      </article>
+    {% empty %}
+      <p class="blog-list__empty">Нет постов.</p>
+    {% endfor %}
+  </div>
 {% endblock %}

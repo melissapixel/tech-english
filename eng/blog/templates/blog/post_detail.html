@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}{{ post.title }}{% endblock %}
+{% block sidebar %}{% endblock %}
+
 {% block content %}
-  <h1>{{ post.title }}</h1>
-  <div>{{ post.content|linebreaks }}</div>
-  <a href="{% url 'blog:post_list' %}">← Назад к списку</a>
+  <div class="blog-page post-detail">
+    <h1 class="post-detail__title">{{ post.title }}</h1>
+      {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-preview__image">
+      {% endif %}
+    <div class="post-detail__content">{{ post.content|linebreaks }}</div>
+    <!-- <a href="{% url 'blog:post_list' %}" class="post-detail__back-link">← Вернуться обратно</a> -->
+  </div>
 {% endblock %}

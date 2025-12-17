@@ -1,13 +1,15 @@
 <div class="latest-posts">
-  <h3>Из блога</h3>
+  <h3 class="latest-posts__title">Из блога</h3>
   {% for post in latest_posts %}
     <div class="post-preview">
-      <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
-      {% if post.has_image %}
-        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image-detail">
+      <h4 class="post-preview__title">
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      </h4>
+      {% if post.image %}
+        <img src="{{ post.image.url }}" class="post-preview__image" alt="{{ post.title }}">
       {% endif %}
-      <p>{{ post.content|truncatewords:15 }}</p>
-      <p>{{ post.created_at }}</p>
+      <p class="post-preview__excerpt">{{ post.content|truncatewords:15 }}</p>
+      <p class="post-preview__date">{{ post.created_at }}</p>
     </div>
   {% endfor %}
 </div>

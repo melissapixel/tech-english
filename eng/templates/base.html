@@ -6,7 +6,10 @@
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'favicon.ico' %}?v=1">
+
     <link rel="stylesheet" href="{% sass_src 'scss/main.scss' %}">  <!-- глобал стили -->
+    <link rel="stylesheet" href="{% sass_src 'blog/scss/main.scss' %}">   <!-- Стили блога (для блоков на главной и т.д.) -->
+
     {% block extra_css %}{% endblock %}    <!-- Дополнительные стили от приложения -->
 </head>
 <body>

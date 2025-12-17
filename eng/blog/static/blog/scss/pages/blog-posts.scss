@@ -1,0 +1,151 @@
+// ----------------------------
+// Универсальный блок: post-preview
+// Используется везде: в списке, в сайдбаре, везде где нужен превью поста
+// ----------------------------
+
+.post-preview {
+  margin-bottom: #{fluid(32, 24)};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Заголовок
+  &__title {
+    @include fluid-text(28, 22);
+    margin: 0 0 #{fluid(10, 8)} 0;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  // Изображение
+  &__image {
+    width: #{fluid(300, 200)};
+    height: auto;
+    border-radius: $border-radius;
+    margin: #{fluid(12, 10)} 0;
+    display: block;
+  }
+
+  // Анонс текста
+  &__excerpt {
+    @include fluid-text(18, 16);
+    color: $secondary-color;
+    line-height: 1.6;
+    margin-bottom: #{fluid(8, 6)};
+  }
+
+  // Дата
+  &__date {
+    @include fluid-text(15, 14);
+    color: $text-light;
+  }
+}
+
+// ----------------------------
+// Контекст: список постов (полноценная страница блога)
+// ----------------------------
+.blog-list {
+  &__header {
+    @include fluid-text(40, 28);
+    text-align: center;
+    margin-bottom: #{fluid(40, 28)};
+    color: $text-color;
+  }
+
+  // В основном списке — крупнее заголовок и больше отступы
+  .post-preview {
+    margin-bottom: #{fluid(48, 32)};
+    padding-bottom: #{fluid(24, 16)};
+    border-bottom: 1px solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    &__title {
+      @include fluid-text(32, 24);
+    }
+
+    &__image {
+      max-width: #{fluid(300, 200)};
+      margin: #{fluid(16, 12)} 0;
+    }
+
+    &__excerpt {
+      margin-bottom: #{fluid(12, 8)};
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    @include fluid-text(20, 18);
+    color: $text-light;
+    padding: #{fluid(40, 32)} 0;
+  }
+}
+
+// ----------------------------
+// Контекст: сайдбар (сжатый вид)
+// ----------------------------
+.latest-posts {
+  &__title {
+    @include fluid-text(24, 20);
+    margin-bottom: #{fluid(20, 16)};
+    color: $text-color;
+  }
+
+  // В сайдбаре — всё уже мельче, ничего не меняем
+  // Просто используем базовый .post-preview без переопределений
+  // (или чуть сожмём отступы, если нужно)
+  .post-preview {
+    margin-bottom: #{fluid(24, 20)};
+    &__title { @include fluid-text(20, 18); }
+    &__excerpt { @include fluid-text(16, 15); }
+    &__date { @include fluid-text(14, 13); }
+    &__image { width: #{fluid(300, 200)}; }
+  }
+}
+
+// ----------------------------
+// Страница одного поста
+// ----------------------------
+.post-detail {
+  &__title {
+    @include fluid-text(48, 32);
+    margin-bottom: #{fluid(24, 20)};
+    color: $text-color;
+  }
+
+  &__content {
+    @include fluid-text(18, 16);
+    line-height: 1.7;
+    color: $text-color;
+    margin-bottom: #{fluid(32, 24)};
+
+    p {
+      margin-bottom: #{fluid(16, 14)};
+    }
+  }
+
+  &__back-link {
+    display: inline-block;
+    @include fluid-text(18, 16);
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
