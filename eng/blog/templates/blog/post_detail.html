@@ -5,7 +5,7 @@
 {% block sidebar %}{% endblock %}
 
 {% block content %}
-  <div class="blog-page post-detail">
+  <div class="post-detail">
     <h1 class="post-detail__title">{{ post.title }}</h1>
       {% if post.image %}
         <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-preview__image">
