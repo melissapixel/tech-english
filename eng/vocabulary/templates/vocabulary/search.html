@@ -8,15 +8,15 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Найди слово на английском</h1>
-
+<h1>Найди слово на английском</h1>
+<div class="search-form">
     {% if error %}
         <div class="error">{{ error }}</div>
     {% endif %}
-
     <form method="post">
         {% csrf_token %}
-        <input type="text" name="query" placeholder="Введите слово..." value="{{ query|default:'' }}">
+        <input type="text" name="query" placeholder="Введите слово для поиска..." value="{{ query|default:'' }}">
         <button type="submit">Найти</button>
     </form>
+</div>
 {% endblock %}

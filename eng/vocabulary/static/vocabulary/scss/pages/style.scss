@@ -8,24 +8,77 @@
     margin: #{fluid(40, 20)};
   }
 }
-
+h1 {
+  margin-bottom: 20px;
+}
 p {
   padding: #{$font-size-big}px;
 }
 
-.error {
-  color: red;
-  margin: 10px 0;
-}
+// Обёртка для формы (добавим её в HTML для гибкости)
+.search-form {
+  max-width: #{fluid(600, 320)};
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 #{fluid(16, 12)};
 
-input[type="text"] {
-  padding: 8px;
-  width: 300px;
-  margin: 20px;
+  // Сообщение об ошибке
+  .error {
+    color: #e74c3c;
+    background-color: rgba(#e74c3c, 0.08);
+    padding: #{fluid(12, 10)};
+    border-radius: 6px;
+    margin: 0 0 #{fluid(20, 16)};
+    font-size: #{fluid(16, 14)};
+    text-align: center;
+    border: 1px solid rgba(#e74c3c, 0.2);
+  }
 
-  @include mobile {
+  // Поле ввода
+  input[type="text"] {
     width: 100%;
-    max-width: 300px;
+    padding: #{fluid(14, 12)};
+    font-size: #{fluid(18, 16)};
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: $text-color or #333;
+    margin: 0 0 #{fluid(16, 14)};
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color or #3498db;
+      box-shadow: 0 0 0 3px rgba($primary-color or #3498db, 0.15);
+    }
+
+    &::placeholder {
+      color: #999;
+      opacity: 1;
+    }
+  }
+
+  // Кнопка
+  button[type="submit"] {
+    width: 100%;
+    padding: #{fluid(14, 12)};
+    font-size: #{fluid(18, 16)};
+    font-weight: 600;
+    color: #fff;
+    background-color: $primary-color or #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%) or #2980b9;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 
