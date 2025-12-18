@@ -11,6 +11,8 @@
         <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-preview__image">
       {% endif %}
     <div class="post-detail__content">{{ post.content|linebreaks }}</div>
-    <!-- <a href="{% url 'blog:post_list' %}" class="post-detail__back-link">← Вернуться обратно</a> -->
+
+    <a href="javascript:history.back()" class="post-detail__back-link">← Вернуться обратно</a>
+
   </div>
 {% endblock %}
