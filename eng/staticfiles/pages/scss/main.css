@@ -165,52 +165,6 @@ a {
   @media (max-width: 767px) {
     .about-content {
       padding: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem) 1rem; } }
-.contact-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: clamp(1.875rem, 1.27066rem + 2.47934vw, 3.75rem) 0; }
-  .contact-content h1 {
-    font-size: clamp(1.75rem, 1.34711rem + 1.65289vw, 3rem);
-    text-align: center;
-    margin-bottom: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem);
-    color: #2c3e50; }
-  .contact-content .contact-lead {
-    font-size: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
-    text-align: center;
-    color: #7f8c8d;
-    margin-bottom: clamp(1.5rem, 1.17769rem + 1.32231vw, 2.5rem);
-    line-height: 1.6; }
-  .contact-content .contact-methods {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem);
-    margin-bottom: clamp(1.25rem, 1.00826rem + 0.99174vw, 2rem);
-    justify-content: center; }
-    @media (max-width: 1023px) {
-      .contact-content .contact-methods {
-        justify-content: flex-start; } }
-  .contact-content .contact-method {
-    background: #f8f9fa;
-    padding: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .contact-content .contact-method img {
-      width: auto;
-      height: clamp(2rem, 1.83884rem + 0.66116vw, 2.5rem);
-      display: block; }
-    .contact-content .contact-method a {
-      display: block;
-      line-height: 0; }
-  .contact-content .contact-note {
-    text-align: center;
-    color: #7f8c8d;
-    font-size: clamp(0.875rem, 0.83471rem + 0.16529vw, 1rem);
-    margin-top: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem); }
-  @media (max-width: 767px) {
-    .contact-content {
-      padding: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem) 1rem; } }
 .privacy-page {
   padding: clamp(2.5rem, 2.01653rem + 1.98347vw, 4rem) 0; }
   .privacy-page__title {
@@ -243,5 +197,49 @@ a {
     text-align: center;
     font-style: italic;
     color: #7f8c8d; }
+
+.contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(1.875rem, 1.27066rem + 2.47934vw, 3.75rem) 0; }
+  .contact-content h1 {
+    font-size: clamp(1.75rem, 1.34711rem + 1.65289vw, 3rem);
+    text-align: center;
+    margin-bottom: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem);
+    color: #2c3e50; }
+  .contact-content .contact-lead {
+    font-size: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: clamp(1.5rem, 1.17769rem + 1.32231vw, 2.5rem);
+    line-height: 1.6; }
+  .contact-content .contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.625rem, 0.34298rem + 1.15702vw, 1.5rem);
+    margin-bottom: clamp(1.25rem, 1.00826rem + 0.99174vw, 2rem);
+    justify-content: center; }
+  .contact-content .contact-method {
+    background: #f8f9fa;
+    padding: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .contact-content .contact-method img {
+      width: auto;
+      height: clamp(2rem, 1.83884rem + 0.66116vw, 2.5rem);
+      display: block; }
+    .contact-content .contact-method a {
+      display: block;
+      line-height: 0; }
+  .contact-content .contact-note {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: clamp(0.875rem, 0.83471rem + 0.16529vw, 1rem);
+    margin-top: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem); }
+  @media (max-width: 767px) {
+    .contact-content {
+      padding: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem) 1rem; } }
 
 /*# sourceMappingURL=main.css.map */
