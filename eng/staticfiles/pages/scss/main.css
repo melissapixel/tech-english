@@ -126,7 +126,8 @@ a {
 .about-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: clamp(1.875rem, 1.27066rem + 2.47934vw, 3.75rem) 0; }
+  padding: clamp(1.875rem, 1.27066rem + 2.47934vw, 3.75rem) 0;
+  text-align: center; }
   .about-content h1 {
     font-size: clamp(1.75rem, 1.34711rem + 1.65289vw, 3rem);
     text-align: center;
@@ -143,12 +144,22 @@ a {
     margin: clamp(1.5rem, 1.17769rem + 1.32231vw, 2.5rem) 0 clamp(0.75rem, 0.66942rem + 0.33058vw, 1rem) 0;
     color: #2c3e50; }
   .about-content ul {
-    padding-left: clamp(1rem, 0.83884rem + 0.66116vw, 1.5rem);
-    margin-bottom: clamp(1.25rem, 1.00826rem + 0.99174vw, 2rem); }
-    .about-content ul li {
-      font-size: clamp(1rem, 0.95971rem + 0.16529vw, 1.125rem);
-      margin-bottom: 8px;
-      line-height: 1.6; }
+    padding: 0;
+    margin: 0 auto clamp(1.25rem, 1.00826rem + 0.99174vw, 2rem);
+    max-width: clamp(18.75rem, 12.70661rem + 24.79339vw, 37.5rem);
+    list-style: none;
+    text-align: center; }
+  .about-content li {
+    font-size: clamp(1rem, 0.95971rem + 0.16529vw, 1.125rem);
+    margin-bottom: clamp(0.5rem, 0.41942rem + 0.33058vw, 0.75rem);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 0; }
+    .about-content li::before {
+      content: "•";
+      color: #3498db;
+      font-weight: bold;
+      margin-right: 8px; }
   .about-content .btn {
     display: inline-block;
     background: #3498db;
@@ -165,39 +176,6 @@ a {
   @media (max-width: 767px) {
     .about-content {
       padding: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem) 1rem; } }
-.privacy-page {
-  padding: clamp(2.5rem, 2.01653rem + 1.98347vw, 4rem) 0; }
-  .privacy-page__title {
-    font-size: clamp(2rem, 1.67769rem + 1.32231vw, 3rem);
-    text-align: center;
-    margin-bottom: clamp(1.75rem, 1.50826rem + 0.99174vw, 2.5rem);
-    color: #2c3e50;
-    font-weight: 700; }
-  .privacy-page__content {
-    max-width: 720px;
-    margin: 0 auto;
-    line-height: 1.6;
-    color: #7f8c8d; }
-  .privacy-page__subtitle {
-    font-size: clamp(1.375rem, 1.31457rem + 0.24793vw, 1.5625rem);
-    margin: clamp(1.5rem, 1.33884rem + 0.66116vw, 2rem) 0 clamp(0.75rem, 0.66942rem + 0.33058vw, 1rem) 0;
-    color: #2c3e50;
-    font-weight: 600; }
-  .privacy-page__paragraph {
-    margin-bottom: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
-    font-size: clamp(1rem, 0.95971rem + 0.16529vw, 1.125rem); }
-  .privacy-page__link {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 600; }
-    .privacy-page__link:hover {
-      text-decoration: underline; }
-  .privacy-page__footer {
-    margin-top: clamp(1.5rem, 1.33884rem + 0.66116vw, 2rem);
-    text-align: center;
-    font-style: italic;
-    color: #7f8c8d; }
-
 .contact-content {
   max-width: 800px;
   margin: 0 auto;
@@ -241,5 +219,37 @@ a {
   @media (max-width: 767px) {
     .contact-content {
       padding: clamp(1.25rem, 0.84711rem + 1.65289vw, 2.5rem) 1rem; } }
+.privacy-page {
+  padding: clamp(2.5rem, 2.01653rem + 1.98347vw, 4rem) 0; }
+  .privacy-page__title {
+    font-size: clamp(2rem, 1.67769rem + 1.32231vw, 3rem);
+    text-align: center;
+    margin-bottom: clamp(1.75rem, 1.50826rem + 0.99174vw, 2.5rem);
+    color: #2c3e50;
+    font-weight: 700; }
+  .privacy-page__content {
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #7f8c8d; }
+  .privacy-page__subtitle {
+    font-size: clamp(1.375rem, 1.31457rem + 0.24793vw, 1.5625rem);
+    margin: clamp(1.5rem, 1.33884rem + 0.66116vw, 2rem) 0 clamp(0.75rem, 0.66942rem + 0.33058vw, 1rem) 0;
+    color: #2c3e50;
+    font-weight: 600; }
+  .privacy-page__paragraph {
+    margin-bottom: clamp(1rem, 0.91942rem + 0.33058vw, 1.25rem);
+    font-size: clamp(1rem, 0.95971rem + 0.16529vw, 1.125rem); }
+  .privacy-page__link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600; }
+    .privacy-page__link:hover {
+      text-decoration: underline; }
+  .privacy-page__footer {
+    margin-top: clamp(1.5rem, 1.33884rem + 0.66116vw, 2rem);
+    text-align: center;
+    font-style: italic;
+    color: #7f8c8d; }
 
 /*# sourceMappingURL=main.css.map */
