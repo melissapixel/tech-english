@@ -18,9 +18,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('martor/', include('martor.urls')),
+    path('blog/', include('blog.urls', namespace='blog')),
     path("", include("vocabulary.urls")),
     path('', include('pages.urls')),       # ← одиночные страницы
-    path('blog/', include('blog.urls', namespace='blog')),
 ]
 
 

@@ -1,3 +1,4 @@
+{% load martortags %}
 <div class="blog latest-posts">
   <h3 class="latest-posts__title">Из блога</h3>
   {% for post in latest_posts %}
@@ -8,7 +9,7 @@
       {% if post.image %}
         <img src="{{ post.image.url }}" class="post-preview__image" alt="{{ post.title }}">
       {% endif %}
-      <p class="post-preview__excerpt">{{ post.content|truncatewords:15 }}</p>
+      <p class="post-preview__excerpt">{{ post.content|truncatewords:15|safe_markdown }}</p>
       <p class="post-preview__date">{{ post.created_at }}</p>
     </div>
   {% endfor %}

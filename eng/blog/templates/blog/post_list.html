@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load sass_tags %}
+{% load sass_tags martortags %}
 
 {% block title %}Блог{% endblock %}
 {% block extra_css %}
@@ -18,7 +18,7 @@
         {% if post.image %}
           <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-preview__image">
         {% endif %}
-        <p class="post-preview__excerpt">{{ post.content|truncatewords:30 }}</p>
+        <p class="post-preview__excerpt">{{ post.content|truncatewords:30|safe_markdown }}</p>
         <p class="post-preview__date">{{ post.created_at }}</p>
       </article>
     {% empty %}
